@@ -1,7 +1,7 @@
 # Important Notes
 
 - To learn JSONForms, read more on the [documentation](https://jsonforms.io/docs).
-#### This project must be generated from [JSONForms Tooling](https://github.com/TheZoker/jsonforms-tooling).
+#### This project must be generated from [JSONForms Tooling](https://github.com/eclipsesource/jsonforms-tooling).
 
 ## Available Scripts
 
