@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import * as uiSchema from './json-ui-schema';
-import * as schema from './json-schema';
+import schema from './schema.json';
+import uischema from './uischema.json';
 
 import * as jsonforms from '@jsonforms/core';
 import { JsonForms } from '@jsonforms/react';
@@ -26,17 +26,15 @@ class App extends Component {
   
   componentDidMount () {
     // Retrieve the schemas
-    const uiSchemaObj = JSON.parse(JSON.stringify(uiSchema)).default;
-    const schemaObj = JSON.parse(JSON.stringify(schema)).default;
     // Pass the UI Schema and the JSON Schema to create the form controls
-    this.props.init(schemaObj, uiSchemaObj);
+    this.props.init(schema, uischema);
   }
 }  
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    init: (jsonschema, jsonuischema) => {
-      dispatch(jsonforms.Actions.init({}, jsonschema, jsonuischema));
+    init: (schema, uischema) => {
+      dispatch(jsonforms.Actions.init({}, schema, uischema));
     }
   };
 };
